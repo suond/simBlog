@@ -31,8 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-#makes errors better looking
-gem 'better_errors', '~> 2.5'
+
 
 # bulma css
 gem 'bulma-rails', '~> 0.7.2'
@@ -56,7 +55,11 @@ group :development do
   # handles event on file system modification
   gem 'guard', '~> 2.15'
   # reloads a page when a view is changed
-  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+  #makes errors better looking
+  gem 'better_errors'
 end
 
 group :test do
